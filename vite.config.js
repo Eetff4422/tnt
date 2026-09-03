@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { copyFileSync, existsSync } from 'node:fs'
+import { copyFileSync, existsSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 // Nom du dépôt GitHub : le site est publié sur https://<utilisateur>.github.io/tnt/
@@ -20,9 +20,13 @@ function replierVers404() {
       dossierSortie = config.build.outDir
     },
     closeBundle() {
-      const source = resolve(process.cwd(), dossierSortie, 'index.html')
-      const cible = resolve(process.cwd(), dossierSortie, '404.html')
-      if (existsSync(source)) copyFileSync(source, cible)
+      const racine = resolve(process.cwd(), dossierSortie)
+      const source = resolve(racine, 'index.html')
+      if (existsSync(source)) copyFileSync(source, resolve(racine, '404.html'))
+
+      // Publication depuis une branche : GitHub Pages passe le contenu par Jekyll,
+      // qui ignore les fichiers commençant par un underscore. Ce marqueur le désactive.
+      writeFileSync(resolve(racine, '.nojekyll'), '')
     },
   }
 }
