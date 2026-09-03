@@ -1,7 +1,11 @@
-<!-- Favicon Technital : version simplifiee (sans coche), lisible des 16 px -->
+<!-- Favicon Technital : la marque complete (hexagone + monogramme T + coche de conformite).
+     Le trait de la coche est legerement epaissi par rapport au logo grand format
+     pour rester lisible dans un onglet de navigateur. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <polygon points="57,32 44.5,53.65 19.5,53.65 7,32 19.5,10.35 44.5,10.35"
            fill="#1a4474" stroke="#1a4474" stroke-width="6" stroke-linejoin="round"/>
-  <rect x="17.5" y="19" width="29" height="7.5" rx="3.75" fill="#ffffff"/>
-  <rect x="28.25" y="19" width="7.5" height="26" rx="3.75" fill="#ffffff"/>
+  <rect x="17.5" y="16" width="29" height="7.5" rx="3.75" fill="#ffffff"/>
+  <rect x="28.25" y="16" width="7.5" height="15" rx="3.75" fill="#ffffff"/>
+  <path d="M20.5 39.5 L28.5 47.5 L46.5 29.5" fill="none" stroke="#34d399"
+        stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
