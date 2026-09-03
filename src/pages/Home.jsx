@@ -7,9 +7,10 @@ import VerificateurAttestation from '../components/site/VerificateurAttestation.
 import AppMobileShowcase from '../components/site/AppMobileShowcase.jsx'
 import Temoignages from '../components/site/Temoignages.jsx'
 import Faq from '../components/site/Faq.jsx'
-import ContactForm from '../components/site/ContactForm.jsx'
 import InfosPratiques from '../components/site/InfosPratiques.jsx'
 
+// Le formulaire de contact vit sur la page Contact ; l'accueil conserve la prise
+// de rendez-vous, qui reste le parcours principal du site vitrine.
 export default function Home() {
   return (
     <>
@@ -22,7 +23,6 @@ export default function Home() {
       <AppMobileShowcase />
       <Temoignages />
       <Faq />
-      <ContactForm />
       <InfosPratiques />
     </>
   )

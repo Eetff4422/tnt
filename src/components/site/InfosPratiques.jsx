@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom'
 import { Clock, MapPin, Phone, Info } from 'lucide-react'
 import SectionTitle from '../ui/SectionTitle.jsx'
+import Button from '../ui/Button.jsx'
 
 // Section volontairement sombre dans les deux thèmes : les cartes sont stylées
 // directement ici (et non via <Card>, dont le fond blanc entrerait en conflit).
@@ -65,6 +67,12 @@ export default function InfosPratiques() {
           <Info className="mt-0.5 h-5 w-5 shrink-0" />
           Conseil pratique : pour éviter les files d'attente aux bancs de test, présentez-vous dès l'ouverture à
           07h30 en semaine.
+        </div>
+
+        <div className="mt-8 text-center">
+          <Button as={Link} to="/contact" variant="light">
+            Nous écrire ou nous localiser
+          </Button>
         </div>
       </div>
     </section>
