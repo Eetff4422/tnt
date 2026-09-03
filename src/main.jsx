@@ -6,7 +6,9 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* basename : la racine du site diffère selon l'environnement
+        (« / » en local, « /tnt/ » sur GitHub Pages) */}
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
