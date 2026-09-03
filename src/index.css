@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 font-sans antialiased transition-colors dark:bg-slate-950 dark:text-slate-200;
+}
+
+/* Anneau de focus visible et cohérent pour la navigation au clavier */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-slate-950;
+}
+
+/* Impression : on n'imprime que le bloc marqué .zone-impression (confirmation de RDV) */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .zone-impression,
+  .zone-impression * {
+    visibility: visible;
+  }
+
+  .zone-impression {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 24px;
+    box-shadow: none;
+  }
+
+  .sans-impression {
+    display: none !important;
+  }
+}
