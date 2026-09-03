@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { ArrowRight, Loader2, ShieldCheck, Smartphone } from 'lucide-react'
+import { ArrowRight, Loader2, Smartphone } from 'lucide-react'
+import Logo from '../ui/Logo.jsx'
 
 // Écran d'accueil / connexion de l'application mobile (maquette, aucune authentification réelle).
 export default function LoginScreen({ onConnexion }) {
@@ -14,7 +15,7 @@ export default function LoginScreen({ onConnexion }) {
     <div className="flex h-full flex-col justify-between bg-gradient-to-b from-primary-800 to-primary-950 px-6 py-10 text-white">
       <div className="mt-6 text-center">
         <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 backdrop-blur">
-          <ShieldCheck className="h-8 w-8" />
+          <Logo className="h-11 w-11" ton="clair" />
         </span>
         <p className="mt-4 text-xl font-extrabold">Technital</p>
         <p className="text-xs text-primary-200">Libreville</p>

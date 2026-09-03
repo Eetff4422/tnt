@@ -1,12 +1,13 @@
-import { MapPin, Phone, ShieldCheck } from 'lucide-react'
+import { MapPin, Phone } from 'lucide-react'
+import Logo from '../ui/Logo.jsx'
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
-          <div className="flex items-center gap-2 text-white">
-            <ShieldCheck className="h-6 w-6 text-primary-400" />
+          <div className="flex items-center gap-2.5 text-white">
+            <Logo className="h-9 w-9" ton="clair" />
             <span className="text-lg font-bold">Technital Libreville</span>
           </div>
           <p className="mt-3 text-sm text-slate-400">

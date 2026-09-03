@@ -21,7 +21,9 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur transition-colors dark:border-slate-800 dark:bg-slate-950/90">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 font-bold text-primary-800 dark:text-white">
-          <Logo />
+          {/* La variante suit le thème : hexagone foncé sur fond clair, éclairci sur fond sombre */}
+          <Logo className="h-9 w-9 dark:hidden" ton="marque" />
+          <Logo className="hidden h-9 w-9 dark:block" ton="clair" />
           <span className="leading-tight">
             Technital
             <span className="block text-xs font-medium text-slate-500 dark:text-slate-400">Libreville</span>
