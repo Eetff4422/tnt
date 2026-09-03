@@ -1,0 +1,10 @@
+<!-- Logo Technital — variante pour fond sombre (hexagone eclairci).
+     Formes vectorielles uniquement (aucune police requise). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256">
+  <polygon points="57,32 44.5,53.65 19.5,53.65 7,32 19.5,10.35 44.5,10.35"
+           fill="#2f6fae" stroke="#2f6fae" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="17.5" y="17" width="29" height="7" rx="3.5" fill="#ffffff"/>
+  <rect x="28.5" y="17" width="7" height="15" rx="3.5" fill="#ffffff"/>
+  <path d="M21 40 L28.5 47.5 L46 30" fill="none" stroke="#34d399"
+        stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
