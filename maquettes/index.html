@@ -1,0 +1,886 @@
+<title>Maquettes Technital</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page-bg:#ffffff; --page-ink:#0f1e2e; --page-muted:#64748b; --page-faint:#94a3b8;
+  --page-line:#e2e8f0; --page-soft:#f8fafc; --accent:#1f5590;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page-bg:#0b1520; --page-ink:#e8eef5; --page-muted:#94a3b8; --page-faint:#64748b;
+    --page-line:#1e2f42; --page-soft:#111e2c; --accent:#7fb0e0;
+  }
+}
+:root[data-theme="dark"]{
+  --page-bg:#0b1520; --page-ink:#e8eef5; --page-muted:#94a3b8; --page-faint:#64748b;
+  --page-line:#1e2f42; --page-soft:#111e2c; --accent:#7fb0e0;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--page-bg); color:var(--page-ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.board{max-width:1090px;margin:0 auto;padding:0 20px;padding-block:56px 88px}
+
+/* ---------- couverture ---------- */
+.cover{border-left:8px solid #1f5590;padding:8px 0 8px 40px;margin-bottom:88px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--accent);margin:0}
+.cover h1{font-size:clamp(30px,5.2vw,52px);line-height:1.12;font-weight:600;margin:26px 0 18px;letter-spacing:-.01em}
+.cover .sub{font-size:clamp(15px,2.4vw,20px);color:var(--page-muted);margin:0}
+.rule{width:72px;height:3px;background:#1f5590;margin:36px 0}
+.cover p.note{max-width:62ch;font-size:16px;line-height:1.7;color:var(--page-muted);margin:0}
+.legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px;max-width:780px}
+.legend div{border:1px solid var(--page-line);background:var(--page-soft);border-radius:10px;padding:16px 18px}
+.legend b{display:block;font-size:12px;letter-spacing:.06em;color:var(--accent);font-weight:600}
+.legend span{display:block;font-size:16px;font-weight:500;margin:5px 0 3px}
+.legend em{font-style:normal;font-size:13px;color:var(--page-muted)}
+.cover .foot{margin-top:44px;font-size:13px;color:var(--page-faint)}
+
+/* ---------- rythme du document ---------- */
+.step{margin:0 0 22px;padding-top:26px;border-top:1px solid var(--page-line)}
+.step b{display:block;font-size:12px;letter-spacing:.12em;font-weight:600;color:var(--accent)}
+.step h2{font-size:26px;font-weight:600;margin:8px 0 8px;letter-spacing:-.01em}
+.step p{margin:0;max-width:72ch;font-size:15px;line-height:1.7;color:var(--page-muted)}
+
+.plate{margin:0 0 52px}
+.plate figcaption{margin:0 0 14px}
+.plate h3{font-size:18px;font-weight:600;margin:0}
+.plate figcaption p{margin:4px 0 0;font-size:13px;color:var(--page-muted)}
+
+.viewport{overflow-x:auto;zoom:.80}
+@media (max-width:1120px){.viewport{zoom:.64}}
+@media (max-width:860px){.viewport{zoom:.48}}
+@media (max-width:600px){.viewport{zoom:.34}}
+
+/* ===================================================================
+   ÉCRANS — palette fixe : ce sont des maquettes d'un produit clair,
+   elles ne suivent pas le thème de la page.
+   =================================================================== */
+.screen{
+  width:1280px;height:800px;background:#f1f5f9;color:#0f1e2e;
+  border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;position:relative;
+  font-size:14px;line-height:1.45;
+}
+.screen.tel{width:390px;height:844px;border-radius:28px;background:#f1f5f9}
+.screen.site{height:1247px;background:#fff}
+
+.app{display:flex;height:100%}
+.side{width:232px;flex:none;background:#fff;border-right:1px solid #e2e8f0;padding:22px 16px;display:flex;flex-direction:column}
+.brand{display:flex;align-items:center;gap:10px;padding-left:8px;margin-bottom:26px}
+.mark{background:#1f5590;color:#fff;border-radius:7px;padding:5px 9px;font-size:13px;font-weight:700;line-height:1}
+.brand span{font-size:12px;font-weight:600;letter-spacing:.1em}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:#334155;text-decoration:none}
+.nav a::before{content:"";width:14px;height:14px;border-radius:3px;background:#cbd5e1;flex:none}
+.nav a.on{background:#eef4fb;color:#1a4474;font-weight:600}
+.nav a.on::before{background:#1f5590}
+.nav a.off{color:#94a3b8}
+.nav a.off::before{background:#e2e8f0}
+.nav-lab{font-size:10px;font-weight:600;letter-spacing:.1em;color:#94a3b8;margin:14px 0 10px}
+.user{margin-top:auto;background:#f8fafc;border-radius:8px;padding:12px}
+.user b{display:block;font-size:13px;font-weight:500}
+.user span{font-size:11px;color:#64748b}
+
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.top{height:64px;flex:none;background:#fff;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;padding:0 32px}
+.top h4{margin:0;font-size:17px;font-weight:600}
+.top em{font-style:normal;font-size:13px;color:#64748b}
+.wrap{padding:32px;display:flex;flex-direction:column;gap:16px;min-height:0}
+.cols{display:flex;gap:20px;align-items:flex-start}
+.col-a{width:620px;flex:none;display:flex;flex-direction:column;gap:16px}
+.col-b{width:343px;flex:none;display:flex;flex-direction:column;gap:16px}
+
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.card > h5{margin:0;font-size:13px;font-weight:600}
+
+.tiles{display:grid;gap:16px;grid-template-columns:repeat(var(--n,3),minmax(0,1fr))}
+.tile{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 20px}
+.tile b{display:block;font-size:12px;font-weight:500;color:#64748b}
+.tile strong{display:block;font-size:28px;font-weight:600;line-height:1.2;margin:3px 0}
+.tile span{display:block;font-size:11px;color:#94a3b8}
+
+.tbl{width:100%;border-collapse:collapse;font-size:13px;text-align:left}
+.tbl th{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8;background:#f8fafc;padding:11px 12px 11px 0}
+.tbl th:first-child,.tbl td:first-child{padding-left:20px}
+.tbl th:last-child,.tbl td:last-child{padding-right:20px}
+.tbl td{padding:13px 12px 13px 0;border-top:1px solid #f1f5f9;color:#334155;vertical-align:middle}
+.tbl tbody tr:first-child td{border-top:1px solid #e2e8f0}
+.tbl .plate-id{font-weight:600;color:#0f1e2e}
+.tbl .lien{color:#1f5590;font-weight:500;font-size:12px}
+.framed{background:#fff;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+.card .tbl th{background:none;padding:0 12px 6px 0}
+.card .tbl th:first-child,.card .tbl td:first-child{padding-left:0}
+.card .tbl th:last-child,.card .tbl td:last-child{padding-right:0}
+.card .tbl td{padding:9px 12px 9px 0}
+
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;font-size:11px;font-weight:500;border:1px solid;white-space:nowrap}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.ok{background:#ecfdf5;border-color:#a7f3d0;color:#047857}
+.warn{background:#fffbeb;border-color:#fde68a;color:#b45309}
+.bad{background:#fef2f2;border-color:#fecaca;color:#b91c1c}
+.neutral{background:#f1f5f9;border-color:#e2e8f0;color:#64748b}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:8px;background:#1a4474;color:#fff;font-size:13px;font-weight:600;border:1px solid transparent;white-space:nowrap}
+.btn.sec{background:#fff;border-color:#cbd5e1;color:#334155;font-weight:500}
+.btn.block{width:100%}
+.btns{display:flex;gap:10px}
+
+.seg{display:inline-flex;background:#e8edf3;border-radius:10px;padding:4px}
+.seg span{padding:8px 16px;border-radius:7px;font-size:12px;color:#64748b;white-space:nowrap}
+.seg span.on{background:#fff;color:#0f1e2e;font-weight:600}
+
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.field b{display:block;font-size:11px;font-weight:400;color:#94a3b8}
+.field span{display:block;font-size:14px;font-weight:500}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.input{border:1px solid #cbd5e1;border-radius:8px;padding:11px 14px;background:#fff;color:#94a3b8;font-size:14px;flex:1;display:flex;align-items:center;gap:10px}
+.input::before{content:"";width:13px;height:13px;border:1.5px solid #94a3b8;border-radius:50%;flex:none}
+.input.plain::before{display:none}
+.bar{height:6px;border-radius:3px;background:#f1f5f9;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px;background:#1f5590}
+.mut{font-size:11px;color:#94a3b8;margin:0}
+.hint{display:flex;align-items:center;gap:8px;background:#eef4fb;border-radius:10px;padding:12px 14px;font-size:11px;color:#1a4474}
+.hint::before{content:"";width:7px;height:7px;border-radius:50%;background:#1f5590;flex:none}
+
+.opts{display:flex;gap:6px}
+.opt{flex:0 0 96px;text-align:center;padding:6px 0;border:1px solid #e2e8f0;border-radius:6px;font-size:11px;color:#94a3b8;background:#fff}
+.opt.s-ok{background:#059669;border-color:#059669;color:#fff;font-weight:600}
+.opt.s-warn{background:#d97706;border-color:#d97706;color:#fff;font-weight:600}
+.opt.s-bad{background:#dc2626;border-color:#dc2626;color:#fff;font-weight:600}
+
+.chart{display:flex;align-items:flex-end;gap:18px;height:132px}
+.chart i{flex:1;background:#c6d9ee;border-radius:4px;position:relative}
+.chart i.on{background:#1f5590}
+.chart i b{position:absolute;top:-20px;left:0;right:0;text-align:center;font-style:normal;font-size:12px;font-weight:600;color:#0f1e2e}
+.chart-x{display:flex;gap:18px;margin-top:8px}
+.chart-x span{flex:1;text-align:center;font-size:10px;color:#94a3b8}
+.mesure{display:flex;flex-direction:column;gap:5px}
+.mesure .row{font-size:12px;color:#334155}
+.mesure .row b{font-weight:500;color:#64748b}
+</style>
+
+<div class="board">
+
+<header class="cover">
+  <p class="eyebrow">ESNO POLY SERVICES</p>
+  <h1>Numérisation du suivi<br>des visites techniques</h1>
+  <p class="sub">Technital — Libreville &nbsp;·&nbsp; Maquettes de travail</p>
+  <div class="rule"></div>
+  <p class="note">Ces écrans illustrent le périmètre décrit en section 5 de la proposition. Ils ont été conçus sans échange préalable avec vos équipes : ce sont des supports de discussion, pas une solution arrêtée. Ils appellent vos corrections.</p>
+  <div class="legend">
+    <div><b>ÉTAPE 1</b><span>Le poste agent</span><em>7 écrans</em></div>
+    <div><b>ÉTAPE 2</b><span>La relance des échéances</span><em>3 écrans</em></div>
+    <div><b>ÉTAPE 3</b><span>La présence en ligne</span><em>2 écrans</em></div>
+  </div>
+  <p class="foot">ESNO Poly Services &nbsp;·&nbsp; Septembre 2026 &nbsp;·&nbsp; Document de travail, non contractuel</p>
+</header>
+
+<section class="step">
+  <b>ÉTAPE 1</b>
+  <h2>Le poste agent</h2>
+  <p>La fondation. L'agent saisit son contrôle directement sur tablette ou téléphone, au lieu de remplir une fiche papier puis de la classer. À partir de cette étape, chaque visite alimente une base unique, partagée et exploitable — c'est elle qui rend les deux étapes suivantes possibles.</p>
+</section>
+
+<!-- 1.1 -->
+<figure class="plate">
+  <figcaption>
+    <h3>1.1 — Connexion agent</h3>
+    <p>Compte nominatif par agent : chaque contrôle reste rattaché à son auteur.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen">
+    <div style="display:flex;align-items:center;justify-content:center;height:100%">
+      <div style="width:460px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:40px">
+        <div class="brand" style="padding:0;margin:0 0 28px"><span class="mark" style="padding:8px 12px;font-size:20px">T</span><span style="font-size:14px;letter-spacing:.12em">TECHNITAL</span></div>
+        <div style="font-size:24px;font-weight:600">Suivi des visites techniques</div>
+        <div style="font-size:14px;color:#64748b;margin-top:8px">Poste agent — Libreville</div>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:18px">
+          <div><div style="font-size:13px;font-weight:500;color:#334155;margin-bottom:8px">Identifiant</div><div class="input plain" style="font-size:15px">agent.mbina</div></div>
+          <div><div style="font-size:13px;font-weight:500;color:#334155;margin-bottom:8px">Mot de passe</div><div class="input plain" style="font-size:15px">••••••••</div></div>
+          <div class="btn block" style="padding:14px;font-size:15px">Ouvrir ma session</div>
+        </div>
+        <p style="text-align:center;font-size:12px;color:#94a3b8;margin:20px 0 0">Chaque action est horodatée et rattachée à votre compte.</p>
+      </div>
+    </div>
+  </div></div>
+</figure>
+
+<!-- 1.2 -->
+<figure class="plate">
+  <figcaption>
+    <h3>1.2 — File du jour</h3>
+    <p>L'agent voit ce qui l'attend et ouvre un contrôle en un clic.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen"><div class="app" data-nav="file" data-title="File du jour" data-meta="Jeudi 11 mars 2027">
+    <div class="wrap">
+      <div class="tiles">
+        <div class="tile"><b>Attendus aujourd'hui</b><strong>5</strong><span>dont 2 flottes</span></div>
+        <div class="tile"><b>Contrôles clôturés</b><strong>1</strong><span>depuis 07h30</span></div>
+        <div class="tile"><b>En attente</b><strong>3</strong><span>prochain à 09h00</span></div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="input">Rechercher une immatriculation — ex. LBV 4521 GA</div>
+        <div class="btn">Nouveau contrôle</div>
+      </div>
+      <div class="framed"><table class="tbl">
+        <thead><tr><th style="width:80px">Créneau</th><th style="width:150px">Immatriculation</th><th style="width:160px">Véhicule</th><th style="width:130px">Catégorie</th><th style="width:215px">Propriétaire</th><th style="width:118px">État</th><th></th></tr></thead>
+        <tbody>
+          <tr><td style="color:#64748b">07h30</td><td class="plate-id">LBV 4521 GA</td><td>Toyota Corolla</td><td>Taxi</td><td>Jean Ndong</td><td><span class="badge ok">Terminé</span></td><td class="lien">Voir le PV</td></tr>
+          <tr style="background:#fcfdfe"><td style="color:#64748b">08h15</td><td class="plate-id">LBV 7788 GA</td><td>Isuzu NPR</td><td>Poids lourd</td><td>Coopérative Estuaire</td><td><span class="badge warn">En cours</span></td><td class="lien">Reprendre</td></tr>
+          <tr><td style="color:#64748b">09h00</td><td class="plate-id">LBV 1190 GA</td><td>Toyota Hiace</td><td>Minibus</td><td>Transports Akébé</td><td><span class="badge neutral">En attente</span></td><td class="lien">Ouvrir</td></tr>
+          <tr><td style="color:#64748b">09h45</td><td class="plate-id">LBV 3305 GA</td><td>Renault Clio</td><td>Véhicule léger</td><td>Marie Obame</td><td><span class="badge neutral">En attente</span></td><td class="lien">Ouvrir</td></tr>
+          <tr><td style="color:#64748b">10h30</td><td class="plate-id">LBV 6042 GA</td><td>Mitsubishi Canter</td><td>Poids lourd</td><td>SARL Bâti-Gabon</td><td><span class="badge neutral">En attente</span></td><td class="lien">Ouvrir</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div></div></div>
+</figure>
+
+<!-- 1.3 -->
+<figure class="plate">
+  <figcaption>
+    <h3>1.3 — Fiche véhicule et historique</h3>
+    <p>Tout l'historique d'un véhicule, retrouvé par immatriculation en quelques secondes.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen"><div class="app" data-nav="vehicules" data-title="LBV 4521 GA — Toyota Corolla" data-meta="Fiche ouverte par Sylvie Mbina">
+    <div class="wrap"><div class="cols">
+      <div class="col-a">
+        <div class="card">
+          <div class="row" style="justify-content:flex-start;gap:12px"><span style="font-size:22px;font-weight:600">LBV 4521 GA</span><span class="badge ok">Visite valide</span></div>
+          <div class="grid3">
+            <div class="field"><b>Marque et modèle</b><span>Toyota Corolla</span></div>
+            <div class="field"><b>Catégorie</b><span>Taxi</span></div>
+            <div class="field"><b>Mise en circulation</b><span>2016</span></div>
+            <div class="field"><b>Numéro de châssis</b><span>JTDBR32E40</span></div>
+            <div class="field"><b>Propriétaire</b><span>Jean Ndong</span></div>
+            <div class="field"><b>Téléphone</b><span>+241 06 12 34 56</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <h5>Historique des passages</h5>
+          <table class="tbl"><tbody>
+            <tr><td style="width:150px;font-weight:500;color:#0f1e2e;border-top:none">12 mars 2026</td><td style="width:150px;border-top:none"><span class="badge ok">Conforme</span></td><td style="width:150px;color:#64748b;font-size:12px;border-top:none">Agent : S. Mbina</td><td style="text-align:right;border-top:none">17 000 FCFA</td></tr>
+            <tr><td style="font-weight:500;color:#0f1e2e">08 mars 2025</td><td><span class="badge warn">Contre-visite</span></td><td style="color:#64748b;font-size:12px">Agent : P. Moussavou</td><td style="text-align:right">8 500 FCFA</td></tr>
+            <tr><td style="font-weight:500;color:#0f1e2e">02 mars 2025</td><td><span class="badge bad">Non conforme</span></td><td style="color:#64748b;font-size:12px">Agent : P. Moussavou</td><td style="text-align:right">17 000 FCFA</td></tr>
+            <tr><td style="font-weight:500;color:#0f1e2e">14 février 2024</td><td><span class="badge ok">Conforme</span></td><td style="color:#64748b;font-size:12px">Agent : S. Mbina</td><td style="text-align:right">16 000 FCFA</td></tr>
+          </tbody></table>
+          <p class="mut">Chaque ligne est horodatée et rattachée nominativement à l'agent qui l'a établie.</p>
+        </div>
+      </div>
+      <div class="col-b">
+        <div class="card">
+          <h5>Prochaine échéance</h5>
+          <div style="font-size:24px;font-weight:600">12 mars 2027</div>
+          <div style="font-size:12px;color:#64748b">dans 12 mois — relance prévue 30 jours avant</div>
+          <div class="bar"><i style="width:100%;background:#d1fae5"></i></div>
+        </div>
+        <div class="card">
+          <h5>Actions</h5>
+          <div class="btn block">Ouvrir un contrôle</div>
+          <div class="btn sec block">Imprimer le dernier procès-verbal</div>
+          <div class="btn sec block">Modifier la fiche véhicule</div>
+        </div>
+        <div class="card">
+          <h5>Flotte du propriétaire</h5>
+          <div style="font-size:13px;color:#334155">Jean Ndong — 3 véhicules suivis</div>
+          <div class="row"><span style="font-size:13px;font-weight:500">LBV 4521 GA</span><span class="badge ok">Valide</span></div>
+          <div class="row"><span style="font-size:13px;font-weight:500">LBV 8834 GA</span><span class="badge warn">Expire dans 22 j</span></div>
+          <div class="row"><span style="font-size:13px;font-weight:500">LBV 2261 GA</span><span class="badge ok">Valide</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div></div></div>
+</figure>
+
+<!-- 1.4 -->
+<figure class="plate">
+  <figcaption>
+    <h3>1.4 — Saisie du contrôle</h3>
+    <p>Formulaire paramétrable, aligné sur vos points de vérification réglementaires.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen"><div class="app" data-nav="visites" data-title="Contrôle en cours — LBV 4521 GA" data-meta="Ouvert à 08h42 · Sylvie Mbina">
+    <div class="wrap"><div class="cols">
+      <div class="col-a">
+        <div class="card">
+          <div class="row"><span style="font-size:14px;font-weight:600">Points de contrôle — catégorie Taxi</span><span style="font-size:12px;color:#64748b">5 sur 6 évalués</span></div>
+          <div class="bar" style="background:#e2e8f0"><i style="width:83%"></i></div>
+        </div>
+        <div class="card">
+          <div class="row"><span style="font-size:13px;font-weight:500;width:160px">Système de freinage</span><div class="opts"><span class="opt s-ok">Conforme</span><span class="opt">Avertissement</span><span class="opt">Non conforme</span></div><span style="width:80px;text-align:right;font-size:11px;color:#94a3b8">Photo</span></div>
+          <div class="row" style="border-top:1px solid #f1f5f9;padding-top:14px"><span style="font-size:13px;font-weight:500;width:160px">Direction</span><div class="opts"><span class="opt s-ok">Conforme</span><span class="opt">Avertissement</span><span class="opt">Non conforme</span></div><span style="width:80px;text-align:right;font-size:11px;color:#94a3b8">Photo</span></div>
+          <div class="row" style="border-top:1px solid #f1f5f9;padding-top:14px"><span style="font-size:13px;font-weight:500;width:160px">Suspensions</span><div class="opts"><span class="opt">Conforme</span><span class="opt s-warn">Avertissement</span><span class="opt">Non conforme</span></div><span style="width:80px;text-align:right;font-size:11px;color:#94a3b8">Photo</span></div>
+          <div class="row" style="border-top:1px solid #f1f5f9;padding-top:14px"><span style="font-size:13px;font-weight:500;width:160px">Essieux</span><div class="opts"><span class="opt">Conforme</span><span class="opt">Avertissement</span><span class="opt s-bad">Non conforme</span></div><span style="width:80px;text-align:right;font-size:11px;font-weight:500;color:#1f5590">Photo jointe</span></div>
+          <div class="row" style="border-top:1px solid #f1f5f9;padding-top:14px"><span style="font-size:13px;font-weight:500;width:160px">Pneumatiques</span><div class="opts"><span class="opt s-ok">Conforme</span><span class="opt">Avertissement</span><span class="opt">Non conforme</span></div><span style="width:80px;text-align:right;font-size:11px;color:#94a3b8">Photo</span></div>
+          <div class="row" style="border-top:1px solid #f1f5f9;padding-top:14px"><span style="font-size:13px;font-weight:500;width:160px">Équipements de signalisation</span><div class="opts"><span class="opt">Conforme</span><span class="opt">Avertissement</span><span class="opt">Non conforme</span></div><span style="width:80px;text-align:right;font-size:11px;color:#94a3b8">Photo</span></div>
+        </div>
+      </div>
+      <div class="col-b">
+        <div class="card">
+          <h5>Parcours de la visite</h5>
+          <div class="row"><span style="display:flex;gap:10px;align-items:center"><em style="font-style:normal;background:#f1f5f9;color:#64748b;font-size:11px;font-weight:600;border-radius:99px;padding:3px 8px">1</em><span style="font-size:13px;color:#334155">Contrôle administratif</span></span><span style="font-size:11px;font-weight:500;color:#047857">Terminé</span></div>
+          <div class="row"><span style="display:flex;gap:10px;align-items:center"><em style="font-style:normal;background:#f1f5f9;color:#64748b;font-size:11px;font-weight:600;border-radius:99px;padding:3px 8px">2</em><span style="font-size:13px;color:#334155">Bancs de test</span></span><span style="font-size:11px;font-weight:500;color:#b45309">En cours</span></div>
+          <div class="row"><span style="display:flex;gap:10px;align-items:center"><em style="font-style:normal;background:#f1f5f9;color:#64748b;font-size:11px;font-weight:600;border-radius:99px;padding:3px 8px">3</em><span style="font-size:13px;color:#334155">Inspection sur fosse</span></span><span style="font-size:11px;font-weight:500;color:#94a3b8">À venir</span></div>
+        </div>
+        <div class="card">
+          <h5>Résultat provisoire</h5>
+          <div><span class="badge bad">Contre-visite requise</span></div>
+          <p style="margin:0;font-size:12px;color:#64748b">1 point non conforme (essieux) et 1 avertissement. Le motif est repris automatiquement sur le procès-verbal.</p>
+        </div>
+        <div class="card">
+          <div class="btn block">Clôturer et générer le procès-verbal</div>
+          <div class="btn sec block">Enregistrer et reprendre plus tard</div>
+        </div>
+        <div class="hint">Saisie possible hors connexion — synchronisation au rétablissement du réseau.</div>
+      </div>
+    </div></div>
+  </div></div></div>
+</figure>
+
+<!-- 1.5 -->
+<figure class="plate">
+  <figcaption>
+    <h3>1.5 — Procès-verbal de visite</h3>
+    <p>Généré à la clôture du contrôle, imprimé et remis au client.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen"><div class="app" data-nav="visites" data-title="Procès-verbal n° PV-2027-0418" data-meta="Clôturé à 09h07 · Sylvie Mbina">
+    <div class="wrap"><div class="cols">
+      <div class="col-a">
+        <div class="pv">
+          <div class="row">
+            <span class="brand" style="padding:0;margin:0"><span class="mark" style="padding:4px 8px;font-size:12px">T</span><span style="font-size:11px">TECHNITAL</span></span>
+            <span style="font-size:11px;color:#64748b">N° PV-2027-0418</span>
+          </div>
+          <div style="font-size:16px;font-weight:600;letter-spacing:.02em">PROCÈS-VERBAL DE VISITE TECHNIQUE</div>
+          <div style="font-size:11px;color:#64748b">Établi le 11 mars 2027 à 09h07 — Boulevard de l'Indépendance, Libreville</div>
+          <hr>
+          <div class="grid3">
+            <div><div class="field" style="margin-bottom:12px"><b>Immatriculation</b><span style="font-size:12px">LBV 4521 GA</span></div><div class="field"><b>Marque et modèle</b><span style="font-size:12px">Toyota Corolla</span></div></div>
+            <div><div class="field" style="margin-bottom:12px"><b>Catégorie</b><span style="font-size:12px">Taxi</span></div><div class="field"><b>Numéro de châssis</b><span style="font-size:12px">JTDBR32E40</span></div></div>
+            <div><div class="field" style="margin-bottom:12px"><b>Propriétaire</b><span style="font-size:12px">Jean Ndong</span></div><div class="field"><b>Agent</b><span style="font-size:12px">Sylvie Mbina</span></div></div>
+          </div>
+          <hr>
+          <div class="pv-lignes">
+            <div><span>Système de freinage</span><b style="color:#047857">Conforme</b></div>
+            <div><span>Direction</span><b style="color:#047857">Conforme</b></div>
+            <div><span>Suspensions</span><b style="color:#b45309">Avertissement</b></div>
+            <div><span>Essieux</span><b style="color:#b91c1c">Non conforme</b></div>
+            <div><span>Pneumatiques</span><b style="color:#047857">Conforme</b></div>
+            <div><span>Équipements de signalisation</span><b style="color:#047857">Conforme</b></div>
+          </div>
+          <div class="pv-verdict">
+            <b>CONTRE-VISITE REQUISE</b>
+            <span>Motif : essieux non conformes. Contre-visite à effectuer avant le 10 avril 2027, à tarif réduit.</span>
+          </div>
+          <div class="row" style="align-items:center">
+            <span style="font-size:10px;color:#94a3b8;line-height:1.6">Document horodaté et rattaché à l'agent signataire.<br>Vérifiable en ligne à partir du numéro de procès-verbal.</span>
+            <span style="width:52px;height:52px;border:1px solid #cbd5e1;background:#f1f5f9;border-radius:4px;flex:none"></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-b">
+        <div class="card">
+          <h5>Remise au client</h5>
+          <div class="btn block">Imprimer le procès-verbal</div>
+          <div class="btn sec block">Enregistrer en PDF</div>
+          <div class="btn sec block">Envoyer au propriétaire</div>
+        </div>
+        <div class="card">
+          <h5>Traçabilité</h5>
+          <div class="field"><b>Établi par</b><span style="font-size:13px">Sylvie Mbina — agent de contrôle</span></div>
+          <div class="field"><b>Horodatage</b><span style="font-size:13px">11/03/2027 09:07:42</span></div>
+          <div class="field"><b>Numéro</b><span style="font-size:13px">PV-2027-0418</span></div>
+          <div class="field"><b>Modifications</b><span style="font-size:13px">Aucune depuis la clôture</span></div>
+          <p style="margin:0;font-size:11px;color:#64748b">En cas de contestation par un client, un assureur ou l'autorité concédante, cette traçabilité est produite immédiatement.</p>
+        </div>
+        <div class="hint" style="display:block">
+          <b style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Prochaine échéance enregistrée</b>
+          Contre-visite attendue avant le 10 avril 2027 — relance automatique à l'étape 2.
+        </div>
+      </div>
+    </div></div>
+  </div></div></div>
+</figure>
+
+<!-- 1.6 -->
+<figure class="plate">
+  <figcaption>
+    <h3>1.6 — Tableau de bord direction</h3>
+    <p>Volumes, taux de contre-visite et motifs de refus, sans reprise mensuelle. Valeurs d'illustration.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen"><div class="app" data-nav="dashboard" data-title="Tableau de bord — mars 2027" data-meta="Direction · mis à jour en continu">
+    <div class="wrap">
+      <div class="tiles" style="--n:4">
+        <div class="tile"><b>Véhicules contrôlés</b><strong>612</strong><span>ce mois-ci</span></div>
+        <div class="tile"><b>Taux de conformité</b><strong style="color:#047857">82 %</strong><span>+3 pts sur un mois</span></div>
+        <div class="tile"><b>Contre-visites</b><strong style="color:#b45309">18 %</strong><span>110 véhicules</span></div>
+        <div class="tile"><b>Clients relancés</b><strong style="color:#94a3b8">—</strong><span>disponible à l'étape 2</span></div>
+      </div>
+      <div class="cols">
+        <div class="col-a">
+          <div class="card">
+            <h5>Volumes mensuels</h5>
+            <div class="chart">
+              <i style="height:83%"></i><i style="height:91%"></i><i style="height:80%"></i><i style="height:74%"></i><i style="height:77%"></i><i style="height:96%"></i><i style="height:103%"></i><i style="height:98%"></i><i style="height:108%"></i><i style="height:112%"></i><i style="height:119%"></i><i class="on" style="height:127%"></i>
+            </div>
+            <div class="chart-x"><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span><span>J</span><span>F</span><span>M</span></div>
+            <p class="mut">Avril 2026 à mars 2027 — 612 véhicules sur le dernier mois.</p>
+          </div>
+          <div class="card">
+            <h5>Répartition par catégorie</h5>
+            <div class="mesure"><div class="row"><span>Taxis et minibus</span><b>386 &nbsp;·&nbsp; 63 %</b></div><div class="bar"><i style="width:63%"></i></div></div>
+            <div class="mesure"><div class="row"><span>Véhicules légers</span><b>142 &nbsp;·&nbsp; 23 %</b></div><div class="bar"><i style="width:23%;background:#6b9ac9"></i></div></div>
+            <div class="mesure"><div class="row"><span>Poids lourds</span><b>84 &nbsp;·&nbsp; 14 %</b></div><div class="bar"><i style="width:14%;background:#b3cfeb"></i></div></div>
+          </div>
+        </div>
+        <div class="col-b">
+          <div class="card">
+            <h5>Motifs de non-conformité</h5>
+            <div class="mesure"><div class="row"><span>Pneumatiques</span><b>31 %</b></div><div class="bar"><i style="width:31%;background:#d97706"></i></div></div>
+            <div class="mesure"><div class="row"><span>Système de freinage</span><b>24 %</b></div><div class="bar"><i style="width:24%;background:#d97706"></i></div></div>
+            <div class="mesure"><div class="row"><span>Signalisation</span><b>18 %</b></div><div class="bar"><i style="width:18%;background:#d97706"></i></div></div>
+            <div class="mesure"><div class="row"><span>Suspensions</span><b>15 %</b></div><div class="bar"><i style="width:15%;background:#d97706"></i></div></div>
+            <div class="mesure"><div class="row"><span>Autres</span><b>12 %</b></div><div class="bar"><i style="width:12%;background:#d97706"></i></div></div>
+          </div>
+          <div class="card">
+            <h5>Export</h5>
+            <div class="btn sec block">Exporter le mois au format tableur</div>
+            <p class="mut">Vos données restent les vôtres et sont récupérables sans notre intervention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div></div>
+</figure>
+
+<!-- 1.7 -->
+<figure class="plate">
+  <figcaption>
+    <h3>1.7 — Le même poste sur téléphone</h3>
+    <p>Sur la fosse, l'agent saisit debout. Même base, même contrôle.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen tel">
+    <div class="tel-statut"><b>09:12</b><span>••••&nbsp;&nbsp;▲&nbsp;&nbsp;▮</span></div>
+    <div class="tel-tete">
+      <div class="row"><span style="font-size:13px;color:#1f5590">‹&nbsp;&nbsp; File du jour</span><span class="badge warn" style="background:#fffbeb;border-color:#fffbeb">Hors connexion</span></div>
+      <div style="font-size:26px;font-weight:600">LBV 4521 GA</div>
+      <div style="font-size:12px;color:#64748b">Toyota Corolla &nbsp;·&nbsp; Taxi &nbsp;·&nbsp; Jean Ndong</div>
+      <div class="row" style="gap:10px"><div class="bar" style="flex:1;background:#e2e8f0"><i style="width:67%"></i></div><span style="font-size:11px;font-weight:500;color:#64748b">4 / 6</span></div>
+    </div>
+    <div class="tel-liste">
+      <div class="tel-point"><div class="row"><b>Système de freinage</b><span>Photo</span></div><div class="opts"><span class="opt s-ok">Conforme</span><span class="opt">Avertis.</span><span class="opt">Non conf.</span></div></div>
+      <div class="tel-point"><div class="row"><b>Direction</b><span>Photo</span></div><div class="opts"><span class="opt s-ok">Conforme</span><span class="opt">Avertis.</span><span class="opt">Non conf.</span></div></div>
+      <div class="tel-point"><div class="row"><b>Suspensions</b><span>Photo</span></div><div class="opts"><span class="opt">Conforme</span><span class="opt s-warn">Avertis.</span><span class="opt">Non conf.</span></div></div>
+      <div class="tel-point"><div class="row"><b>Essieux</b><span style="color:#1f5590;font-weight:500">1 photo</span></div><div class="opts"><span class="opt">Conforme</span><span class="opt">Avertis.</span><span class="opt s-bad">Non conf.</span></div></div>
+      <div class="tel-point"><div class="row"><b>Pneumatiques</b><span>Photo</span></div><div class="opts"><span class="opt">Conforme</span><span class="opt">Avertis.</span><span class="opt">Non conf.</span></div></div>
+    </div>
+    <div class="tel-bas"><div class="btn block" style="padding:14px;font-size:14px;border-radius:10px">Clôturer et générer le PV</div></div>
+  </div></div>
+</figure>
+
+<section class="step">
+  <b>ÉTAPE 2</b>
+  <h2>La relance des échéances</h2>
+  <p>Une fois les visites enregistrées, les dates d'expiration deviennent une information utilisable. C'est l'étape qui ne se contente pas de vous faire gagner du temps : elle ramène des clients qui, aujourd'hui, vous échappent.</p>
+</section>
+
+<!-- 2.1 -->
+<figure class="plate">
+  <figcaption>
+    <h3>2.1 — Échéancier des visites</h3>
+    <p>Les dates d'expiration deviennent une information utilisable, et non un oubli.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen"><div class="app" data-nav="relances" data-etape2="1" data-title="Échéances à venir" data-meta="Direction · 11 mars 2027">
+    <div class="wrap">
+      <div class="tiles" style="--n:4">
+        <div class="tile"><b>Expirent sous 30 jours</b><strong style="color:#b45309">48</strong><span>dont 29 en flotte</span></div>
+        <div class="tile"><b>Relances envoyées</b><strong>126</strong><span>sur le mois</span></div>
+        <div class="tile"><b>Retours effectifs</b><strong style="color:#047857">71 %</strong><span>des clients relancés</span></div>
+        <div class="tile"><b>Échecs de distribution</b><strong style="color:#b91c1c">4</strong><span>numéros à corriger</span></div>
+      </div>
+      <div class="row">
+        <div class="seg"><span>Sous 15 jours</span><span class="on">Sous 30 jours</span><span>Sous 60 jours</span><span>Déjà expirées</span></div>
+        <div class="btn">Lancer une campagne de relance</div>
+      </div>
+      <div class="framed"><table class="tbl">
+        <thead><tr><th style="width:150px">Immatriculation</th><th style="width:190px">Propriétaire</th><th style="width:110px">Flotte</th><th style="width:120px">Expire le</th><th style="width:90px">Reste</th><th style="width:150px">Dernière relance</th><th></th></tr></thead>
+        <tbody>
+          <tr><td class="plate-id">LBV 8834 GA</td><td>Jean Ndong</td><td style="color:#64748b;font-size:12px">3 véhicules</td><td>18 mars 2027</td><td><span class="badge bad">7 jours</span></td><td style="color:#94a3b8">—</td><td class="lien">Relancer</td></tr>
+          <tr><td class="plate-id">LBV 6042 GA</td><td>SARL Bâti-Gabon</td><td style="color:#64748b;font-size:12px">11 véhicules</td><td>22 mars 2027</td><td><span class="badge bad">11 jours</span></td><td style="color:#94a3b8">—</td><td class="lien">Relancer</td></tr>
+          <tr><td class="plate-id">LBV 1190 GA</td><td>Transports Akébé</td><td style="color:#64748b;font-size:12px">7 véhicules</td><td>29 mars 2027</td><td><span class="badge warn">18 jours</span></td><td>04 mars — SMS</td><td class="lien">Voir</td></tr>
+          <tr><td class="plate-id">LBV 2261 GA</td><td>Coopérative Estuaire</td><td style="color:#64748b;font-size:12px">24 véhicules</td><td>02 avril 2027</td><td><span class="badge warn">22 jours</span></td><td>02 mars — WhatsApp</td><td class="lien">Voir</td></tr>
+          <tr><td class="plate-id">LBV 5510 GA</td><td>Marie Obame</td><td style="color:#64748b;font-size:12px">1 véhicule</td><td>09 avril 2027</td><td><span class="badge warn">29 jours</span></td><td style="color:#94a3b8">—</td><td class="lien">Relancer</td></tr>
+          <tr><td class="plate-id">LBV 3305 GA</td><td>Paul Ovono</td><td style="color:#64748b;font-size:12px">2 véhicules</td><td>14 avril 2027</td><td><span class="badge neutral">34 jours</span></td><td style="color:#94a3b8">—</td><td class="lien">Relancer</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div></div></div>
+</figure>
+
+<!-- 2.2 -->
+<figure class="plate">
+  <figcaption>
+    <h3>2.2 — Fiche flotte</h3>
+    <p>Un propriétaire multi-véhicules se relance une fois, pas véhicule par véhicule.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen"><div class="app" data-nav="relances" data-etape2="1" data-title="Coopérative Estuaire — 24 véhicules" data-meta="Client depuis 2019">
+    <div class="wrap"><div class="cols">
+      <div class="col-a">
+        <div class="card">
+          <h5>Échéancier prévisionnel</h5>
+          <div class="chart" style="height:88px;gap:24px">
+            <i class="alerte" style="height:86%"><b>6</b></i><i style="height:57%"><b>4</b></i><i style="height:29%"><b>2</b></i><i style="height:71%"><b>5</b></i><i style="height:43%"><b>3</b></i><i style="height:57%"><b>4</b></i>
+          </div>
+          <div class="chart-x" style="gap:24px"><span>Mars</span><span>Avril</span><span>Mai</span><span>Juin</span><span>Juillet</span><span>Août</span></div>
+          <p class="mut">6 visites arrivent à échéance ce mois-ci. Une relance groupée couvre les 6.</p>
+        </div>
+        <div class="card">
+          <h5>Véhicules de la flotte</h5>
+          <table class="tbl">
+            <thead><tr><th style="width:150px">Immatriculation</th><th style="width:130px">Catégorie</th><th style="width:130px">Expire le</th><th></th></tr></thead>
+            <tbody>
+              <tr><td style="font-weight:500;color:#0f1e2e;border-top:none">LBV 2261 GA</td><td style="border-top:none">Taxi</td><td style="border-top:none">18 mars 2027</td><td style="border-top:none"><span class="badge bad">Expire dans 7 j</span></td></tr>
+              <tr><td style="font-weight:500;color:#0f1e2e">LBV 4108 GA</td><td>Taxi</td><td>21 mars 2027</td><td><span class="badge bad">Expire dans 10 j</span></td></tr>
+              <tr><td style="font-weight:500;color:#0f1e2e">LBV 7734 GA</td><td>Minibus</td><td>26 mars 2027</td><td><span class="badge warn">Expire dans 15 j</span></td></tr>
+              <tr><td style="font-weight:500;color:#0f1e2e">LBV 9012 GA</td><td>Minibus</td><td>30 mars 2027</td><td><span class="badge warn">Expire dans 19 j</span></td></tr>
+            </tbody>
+          </table>
+          <div style="font-size:12px;font-weight:500;color:#1f5590">20 autres véhicules — afficher la flotte complète</div>
+        </div>
+      </div>
+      <div class="col-b">
+        <div class="card">
+          <h5>Contact</h5>
+          <div class="field"><b>Responsable</b><span style="font-size:13px">Pascal Nzé</span></div>
+          <div class="field"><b>Téléphone</b><span style="font-size:13px">+241 06 44 21 09</span></div>
+          <div class="field"><b>Canal préféré</b><span style="font-size:13px">WhatsApp</span></div>
+          <div class="field"><b>Client depuis</b><span style="font-size:13px">Mars 2019</span></div>
+          <div class="btn block">Relancer les 6 véhicules du mois</div>
+        </div>
+        <div class="card">
+          <h5>Relances passées</h5>
+          <div><div class="row"><b style="font-size:12px;font-weight:500">02 mars 2027</b><span style="font-size:11px;color:#94a3b8">WhatsApp</span></div><div style="font-size:11px;color:#047857">Lu — 2 rendez-vous pris</div></div>
+          <div><div class="row"><b style="font-size:12px;font-weight:500">14 janv. 2027</b><span style="font-size:11px;color:#94a3b8">SMS</span></div><div style="font-size:11px;color:#334155">Distribué</div></div>
+          <div><div class="row"><b style="font-size:12px;font-weight:500">08 déc. 2026</b><span style="font-size:11px;color:#94a3b8">WhatsApp</span></div><div style="font-size:11px;color:#047857">Lu — 1 rendez-vous pris</div></div>
+        </div>
+        <div class="card">
+          <h5>Sur douze mois</h5>
+          <div class="row"><span style="font-size:13px;color:#334155">Passages enregistrés</span><b style="font-size:15px;font-weight:600">26</b></div>
+          <div class="row"><span style="font-size:13px;color:#334155">Taux de retour</span><b style="font-size:15px;font-weight:600">88 %</b></div>
+          <div class="row"><span style="font-size:13px;color:#334155">Contre-visites</span><b style="font-size:15px;font-weight:600">4</b></div>
+        </div>
+      </div>
+    </div></div>
+  </div></div></div>
+</figure>
+
+<!-- 2.3 -->
+<figure class="plate">
+  <figcaption>
+    <h3>2.3 — Campagne de relance et suivi</h3>
+    <p>Envois, échecs de distribution et retours effectifs : une campagne se mesure.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen"><div class="app" data-nav="relances" data-etape2="1" data-title="Nouvelle campagne de relance" data-meta="Brouillon — non envoyé">
+    <div class="wrap"><div class="cols">
+      <div class="col-a">
+        <div class="card">
+          <div>
+            <div style="font-size:12px;font-weight:500;color:#334155;margin-bottom:8px">Destinataires</div>
+            <div class="row" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px">
+              <span><b style="display:block;font-size:13px;font-weight:500">Visites expirant sous 30 jours</b><span style="font-size:11px;color:#64748b">48 véhicules — 31 propriétaires, dont 6 flottes</span></span>
+              <span style="font-size:12px;font-weight:500;color:#1f5590">Modifier</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:500;color:#334155;margin-bottom:8px">Canal d'envoi</div>
+            <div class="seg"><span class="on">WhatsApp Business</span><span>SMS</span><span>Les deux</span></div>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:500;color:#334155;margin-bottom:8px">Message</div>
+            <div style="border:1px solid #cbd5e1;border-radius:8px;padding:12px 14px;background:#fff">
+              <p style="margin:0;font-size:13px;color:#334155;line-height:1.65;white-space:pre-line">Bonjour [prénom], la visite technique du véhicule [immatriculation] arrive à échéance le [date].
+
+Vous pouvez vous présenter sans rendez-vous du lundi au vendredi de 07h30 à 15h30, et le samedi de 08h00 à 12h00.
+
+Technital — Boulevard de l'Indépendance, Libreville.</p>
+              <div style="display:flex;gap:6px;margin-top:10px">
+                <span class="var">[prénom]</span><span class="var">[immatriculation]</span><span class="var">[date]</span><span class="var">[montant]</span>
+              </div>
+            </div>
+          </div>
+          <p class="mut">Le coût unitaire des messages est facturé par votre opérateur, selon le volume envoyé. Nous ne le facturons pas et n'en prenons pas de marge.</p>
+          <div class="btns"><div class="btn">Programmer l'envoi</div><div class="btn sec">Envoyer un test à mon numéro</div></div>
+        </div>
+      </div>
+      <div class="col-b">
+        <div class="card">
+          <h5>Aperçu sur le téléphone du client</h5>
+          <div style="background:#f1f5f9;border-radius:14px;padding:16px 14px">
+            <div style="background:#fff;border-radius:12px;padding:12px 14px 10px">
+              <p style="margin:0;font-size:12px;line-height:1.6;white-space:pre-line">Bonjour Pascal, la visite technique du véhicule LBV 2261 GA arrive à échéance le 18 mars 2027.
+
+Vous pouvez vous présenter sans rendez-vous du lundi au vendredi de 07h30 à 15h30, et le samedi de 08h00 à 12h00.
+
+Technital — Boulevard de l'Indépendance, Libreville.</p>
+              <div style="text-align:right;font-size:10px;color:#94a3b8;margin-top:6px">09:00 &nbsp; ✓✓</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h5>Dernière campagne — 02 mars</h5>
+          <div class="mesure"><div class="row"><span>Envoyés</span><b>126 &nbsp;·&nbsp; 100 %</b></div><div class="bar"><i style="width:100%"></i></div></div>
+          <div class="mesure"><div class="row"><span>Distribués</span><b>122 &nbsp;·&nbsp; 97 %</b></div><div class="bar"><i style="width:97%;background:#059669"></i></div></div>
+          <div class="mesure"><div class="row"><span>Échecs</span><b>4 &nbsp;·&nbsp; 3 %</b></div><div class="bar"><i style="width:3%;background:#dc2626"></i></div></div>
+          <div class="mesure"><div class="row"><span>Retours effectifs</span><b>87 &nbsp;·&nbsp; 71 %</b></div><div class="bar"><i style="width:71%;background:#059669"></i></div></div>
+        </div>
+      </div>
+    </div></div>
+  </div></div></div>
+</figure>
+
+<section class="step">
+  <b>ÉTAPE 3</b>
+  <h2>La présence en ligne</h2>
+  <p>Un site simple et rapide, présentant votre activité, vos tarifs, vos horaires et votre localisation. L'étape la moins coûteuse et la plus visible — elle ne règle en revanche aucun problème d'organisation, d'où sa position en dernier.</p>
+</section>
+
+<!-- 3.1 -->
+<figure class="plate">
+  <figcaption>
+    <h3>3.1 — Site vitrine</h3>
+    <p>Activité, tarifs, horaires et localisation. Léger, pensé pour les connexions mobiles à faible débit.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen site">
+    <header class="st-head">
+      <span class="brand" style="padding:0;margin:0"><span class="mark" style="padding:6px 10px;font-size:15px">T</span><span style="font-size:14px;letter-spacing:.12em">TECHNITAL</span></span>
+      <nav class="st-menu"><span>La visite</span><span>Tarifs</span><span>Horaires et accès</span><span>Contact</span></nav>
+      <span class="btn">066 85 60 46</span>
+    </header>
+    <section class="st-hero">
+      <div>
+        <h1>La visite technique de votre véhicule, à Libreville</h1>
+        <p>Contrôle administratif, bancs de test et inspection sur fosse. Sans rendez-vous, du lundi au samedi matin, Boulevard de l'Indépendance.</p>
+        <div class="btns" style="margin-top:20px"><span class="btn" style="padding:13px 22px;font-size:14px">Nous appeler</span><span class="btn sec" style="padding:13px 22px;font-size:14px">Nous écrire sur WhatsApp</span></div>
+      </div>
+      <aside class="st-infos">
+        <h5>Horaires et accès</h5>
+        <div class="row"><span>Lundi – vendredi</span><b>07h30 – 15h30</b></div>
+        <div class="row"><span>Samedi</span><b>08h00 – 12h00</b></div>
+        <div class="row"><span>Dimanche</span><b style="color:#94a3b8">Fermé</b></div>
+        <hr>
+        <p>Boulevard de l'Indépendance<br>Trois Quartiers, Libreville</p>
+        <span class="lien">Ouvrir l'itinéraire</span>
+      </aside>
+    </section>
+    <section class="st-bloc">
+      <h2>Comment se déroule la visite</h2>
+      <div class="st-cartes">
+        <div class="st-etape"><b>01</b><span>Contrôle administratif</span><p>Vérification des pièces au guichet et contrôle de la concordance du numéro de châssis.</p></div>
+        <div class="st-etape"><b>02</b><span>Passage sur bancs de test</span><p>Évaluation mesurée du freinage, du parallélisme et des suspensions.</p></div>
+        <div class="st-etape"><b>03</b><span>Inspection sur fosse</span><p>Examen de la structure, de la carrosserie et des éléments mécaniques inférieurs.</p></div>
+      </div>
+    </section>
+    <section class="st-bloc gris">
+      <h2>Tarifs</h2>
+      <div class="st-cartes">
+        <div class="st-tarif"><span>Véhicule léger</span><b>16 000 FCFA</b><em>Voiture particulière</em></div>
+        <div class="st-tarif"><span>Utilitaire, taxi ou minibus</span><b>16 000 – 19 000 FCFA</b><em>Selon le gabarit</em></div>
+        <div class="st-tarif"><span>Poids lourd</span><b>19 000 – 22 000 FCFA</b><em>Gros porteur</em></div>
+      </div>
+      <p class="mut">Barèmes du Ministère des Transports. Contre-visite à tarif réduit après réparation.</p>
+    </section>
+    <footer class="st-pied">
+      <div><b>TECHNITAL</b><span>Boulevard de l'Indépendance, Trois Quartiers — Libreville</span></div>
+      <div style="text-align:right"><b>066 85 60 46</b><span>Contenus modifiables par vos soins, sans notre intervention.</span></div>
+    </footer>
+  </div></div>
+</figure>
+
+<!-- 3.2 -->
+<figure class="plate">
+  <figcaption>
+    <h3>3.2 — Le même site sur téléphone</h3>
+    <p>La majorité de vos visiteurs arriveront par là.</p>
+  </figcaption>
+  <div class="viewport"><div class="screen tel" style="background:#fff">
+    <div class="tel-statut"><b>09:12</b><span>••••&nbsp;&nbsp;▲&nbsp;&nbsp;▮</span></div>
+    <header class="st-head" style="padding:12px 20px">
+      <span class="brand" style="padding:0;margin:0"><span class="mark">T</span><span>TECHNITAL</span></span>
+      <span style="font-size:18px;color:#334155">☰</span>
+    </header>
+    <section style="background:#f8fafc;padding:28px 20px;display:flex;flex-direction:column;gap:14px">
+      <h1 style="margin:0;font-size:27px;line-height:1.22;font-weight:600">La visite technique de votre véhicule, à Libreville</h1>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#475569">Sans rendez-vous, du lundi au samedi matin. Boulevard de l'Indépendance.</p>
+      <span class="btn block" style="padding:13px;font-size:14px;border-radius:9px">Appeler le 066 85 60 46</span>
+      <span class="btn sec block" style="padding:13px;font-size:14px;border-radius:9px">Écrire sur WhatsApp</span>
+    </section>
+    <section style="padding:24px 20px;display:flex;flex-direction:column;gap:12px">
+      <h2 style="margin:0;font-size:16px;font-weight:600">Horaires et accès</h2>
+      <div class="row"><span style="font-size:13px;color:#334155">Lundi – vendredi</span><b style="font-size:13px;font-weight:500">07h30 – 15h30</b></div>
+      <div class="row"><span style="font-size:13px;color:#334155">Samedi</span><b style="font-size:13px;font-weight:500">08h00 – 12h00</b></div>
+      <div class="row"><span style="font-size:13px;color:#334155">Dimanche</span><b style="font-size:13px;font-weight:500;color:#94a3b8">Fermé</b></div>
+      <div style="height:96px;border:1px solid #e2e8f0;background:#f1f5f9;border-radius:10px"></div>
+    </section>
+    <section style="background:#f8fafc;padding:24px 20px 28px;display:flex;flex-direction:column;gap:10px">
+      <h2 style="margin:0;font-size:16px;font-weight:600">Tarifs</h2>
+      <div class="row" style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:13px 16px"><span style="font-size:12px;color:#334155">Véhicule léger</span><b style="font-size:12px;font-weight:600;white-space:nowrap">16 000 FCFA</b></div>
+      <div class="row" style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:13px 16px"><span style="font-size:12px;color:#334155">Utilitaire, taxi ou minibus</span><b style="font-size:12px;font-weight:600;white-space:nowrap">16 000 – 19 000 FCFA</b></div>
+      <div class="row" style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:13px 16px"><span style="font-size:12px;color:#334155">Poids lourd</span><b style="font-size:12px;font-weight:600;white-space:nowrap">19 000 – 22 000 FCFA</b></div>
+    </section>
+  </div></div>
+</figure>
+
+<section class="step" style="margin-bottom:0">
+  <b>SUITE</b>
+  <h2>Ce que ces écrans ne montrent pas</h2>
+  <p>Conformément à la section 6 de la proposition, ne figurent pas ici : l'attestation dématérialisée ayant valeur légale, l'espace en ligne pour les automobilistes (rendez-vous, consultation, paiement Mobile Money), le tableau de bord destiné à la Mairie et la reprise de l'historique des années antérieures. Ces éléments sont réalisables et relèvent d'une phase ultérieure.</p>
+  <p style="margin-top:14px">Ces maquettes seront reprises en phase 2 (conception), après l'audit : reprendre une maquette coûte une heure, reprendre un écran développé en coûte dix.</p>
+</section>
+
+</div>
+
+<style>
+/* ---------- procès-verbal ---------- */
+.pv{background:#fff;border:1px solid #e2e8f0;border-radius:6px;padding:32px 36px 28px;display:flex;flex-direction:column;gap:18px;box-shadow:0 6px 18px rgba(15,30,48,.08)}
+.pv hr{border:none;border-top:1px solid #e2e8f0;margin:0}
+.pv-lignes > div{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid #f1f5f9;font-size:12px;color:#334155}
+.pv-lignes > div:first-child{border-top:none}
+.pv-lignes b{font-weight:500}
+.pv-verdict{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:14px 16px}
+.pv-verdict b{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;color:#b91c1c}
+.pv-verdict span{display:block;font-size:11px;color:#7f1d1d;margin-top:3px}
+.var{background:#eef4fb;color:#1a4474;border-radius:5px;padding:3px 8px;font-size:10px;font-weight:500}
+.lien{color:#1f5590;font-weight:500;font-size:13px}
+.chart i.alerte{background:#d97706}
+
+/* ---------- écrans téléphone ---------- */
+.tel-statut{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:14px 24px 10px;font-size:12px}
+.tel-statut b{font-weight:600}
+.tel-statut span{font-size:11px;color:#94a3b8}
+.tel-tete{background:#fff;padding:6px 20px 18px;display:flex;flex-direction:column;gap:10px}
+.tel-liste{padding:14px 20px 110px;display:flex;flex-direction:column;gap:12px}
+.tel-point{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.tel-point b{font-size:14px;font-weight:500}
+.tel-point .row > span{font-size:11px;color:#94a3b8}
+.tel-point .opt{flex:1}
+.tel-bas{position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #e2e8f0;padding:14px 20px 24px}
+
+/* ---------- site vitrine ---------- */
+.st-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 80px;background:#fff;border-bottom:1px solid #e2e8f0}
+.st-menu{display:flex;gap:28px;font-size:13px;color:#334155}
+.st-hero{display:flex;gap:60px;align-items:center;padding:64px 80px;background:#f8fafc}
+.st-hero > div:first-child{width:620px;flex:none}
+.st-hero h1{margin:0 0 18px;font-size:42px;line-height:1.18;font-weight:600;letter-spacing:-.01em}
+.st-hero p{margin:0;max-width:580px;font-size:16px;line-height:1.65;color:#475569}
+.st-infos{width:360px;flex:none;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:16px}
+.st-infos h5{margin:0;font-size:13px;font-weight:600}
+.st-infos .row{font-size:13px;color:#334155}
+.st-infos .row b{font-weight:500;color:#0f1e2e}
+.st-infos hr{border:none;border-top:1px solid #f1f5f9;margin:0}
+.st-infos p{margin:0;font-size:13px;color:#334155;line-height:1.6}
+.st-bloc{padding:56px 80px 48px;background:#fff;display:flex;flex-direction:column;gap:24px}
+.st-bloc.gris{background:#f8fafc;padding:48px 80px 56px}
+.st-bloc h2{margin:0;font-size:26px;font-weight:600;letter-spacing:-.01em}
+.st-cartes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.st-etape{background:#f8fafc;border-radius:14px;padding:22px 24px}
+.st-etape b{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;color:#1f5590}
+.st-etape span{display:block;font-size:17px;font-weight:600;margin:8px 0}
+.st-etape p{margin:0;font-size:13px;color:#64748b;line-height:1.65}
+.st-tarif{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:22px 24px}
+.st-tarif span{display:block;font-size:14px;font-weight:500;color:#334155}
+.st-tarif b{display:block;font-size:22px;font-weight:600;margin:6px 0 4px}
+.st-tarif em{font-style:normal;font-size:12px;color:#94a3b8}
+.st-pied{background:#142f4f;padding:36px 80px;display:flex;justify-content:space-between;gap:40px}
+.st-pied b{display:block;font-size:14px;font-weight:600;color:#fff;letter-spacing:.1em}
+.st-pied div:last-child b{letter-spacing:0}
+.st-pied span{display:block;font-size:12px;color:#b3cfeb;margin-top:6px}
+
+/* ---------- impression : une planche par page A4 paysage ---------- */
+@page{size:A4 landscape;margin:10mm}
+@media print{
+  body{background:#fff;color:#0f1e2e}
+  .board{max-width:none;padding:0}
+  .cover{break-after:page;margin-bottom:0}
+  .plate{break-inside:avoid;break-after:page;margin-bottom:0}
+  .step{break-inside:avoid;break-before:page;border-top:none}
+  .viewport{zoom:.76;overflow:visible}
+  .screen.site{zoom:.62}
+}
+</style>
+
+<script>
+(function(){
+  var BASE = [['file','File du jour'],['vehicules','Véhicules'],['visites','Visites'],['dashboard','Tableau de bord']];
+  document.querySelectorAll('.app').forEach(function(app){
+    var actif = app.dataset.nav;
+    var etape2 = app.dataset.etape2 === '1';
+    var direction = actif === 'dashboard' || actif === 'relances';
+
+    var items = BASE.slice();
+    if (etape2) items.push(['relances','Relances']);
+
+    var side = document.createElement('aside');
+    side.className = 'side';
+
+    var brand = document.createElement('div');
+    brand.className = 'brand';
+    brand.innerHTML = '<span class="mark">T</span><span>TECHNITAL</span>';
+    side.appendChild(brand);
+
+    var nav = document.createElement('div');
+    nav.className = 'nav';
+    items.forEach(function(it){
+      var a = document.createElement('a');
+      if (it[0] === actif) a.className = 'on';
+      a.textContent = it[1];
+      nav.appendChild(a);
+    });
+    side.appendChild(nav);
+
+    var lab = document.createElement('div');
+    lab.className = 'nav-lab';
+    lab.textContent = 'À VENIR';
+    side.appendChild(lab);
+
+    var nav2 = document.createElement('div');
+    nav2.className = 'nav';
+    var restants = etape2 ? ['Site public — étape 3'] : ['Relances — étape 2','Site public — étape 3'];
+    restants.forEach(function(txt){
+      var a = document.createElement('a');
+      a.className = 'off';
+      a.textContent = txt;
+      nav2.appendChild(a);
+    });
+    side.appendChild(nav2);
+
+    var user = document.createElement('div');
+    user.className = 'user';
+    var b = document.createElement('b');
+    b.textContent = direction ? 'Direction Technital' : 'Sylvie Mbina';
+    var s = document.createElement('span');
+    s.textContent = direction ? "Suivi d'activité" : 'Agent de contrôle';
+    user.appendChild(b); user.appendChild(s);
+    side.appendChild(user);
+
+    var top = document.createElement('div');
+    top.className = 'top';
+    var h4 = document.createElement('h4');
+    h4.textContent = app.dataset.title || '';
+    var em = document.createElement('em');
+    em.textContent = app.dataset.meta || '';
+    top.appendChild(h4); top.appendChild(em);
+
+    var main = document.createElement('div');
+    main.className = 'main';
+    main.appendChild(top);
+    var wrap = app.querySelector('.wrap');
+    if (wrap) main.appendChild(wrap);
+
+    app.appendChild(side);
+    app.appendChild(main);
+  });
+})();
+</script>
